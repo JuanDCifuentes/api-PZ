@@ -48,3 +48,5 @@ export const deleteUser = (req, res) => {
     .then((data) => res.json(data))
     .catch((err) => res.json({ messege: err }));
 };
+
+
