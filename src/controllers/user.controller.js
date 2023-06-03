@@ -30,12 +30,15 @@ export const getUser = (req, res) => {
 
 export const putUser = (req, res) => {
   const { id } = req.params;
-  const { userName, name, email, infoUser, likendProjects } = req.body;
+
+  const { userName, name, email, infoUser, linkendProjects } = req.body;
+
+  
 
   userModel
     .updateOne(
       { _id: id },
-      { $set: { userName, name, email, infoUser, likendProjects } }
+      { $set: { userName, name, email, infoUser, linkendProjects } }
     )
     .then((data) => res.json(data))
     .catch((error) => res.json({ messege: error }));

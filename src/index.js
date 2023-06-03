@@ -4,6 +4,7 @@ import './db.js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 import  cors  from "cors";
+import morgan from "morgan"
 
 import routerUser from './routes/user.routes.js'; 
 import routerPreProject from './routes/preProject.routes.js';
@@ -15,6 +16,7 @@ const port = process.env.port || 4000;
 //middleware
 app.use(Express.json());
 app.use(cors());
+app.use(morgan())
 app.use('/api/users', routerUser);
 app.use('/api/Project', routerPreProject);
 

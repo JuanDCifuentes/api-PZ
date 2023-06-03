@@ -5,6 +5,9 @@ let id = 2000;
 
 export const createPreProject = (req, res) => {
   const project = preProjectModel(req.body);
+
+  console.log({body: res.body,
+  project: project});
   project._idProject = new mongoose.Types.ObjectId(id);
   project
     .save()
@@ -31,7 +34,7 @@ export const getPreProject = (req, res) => {
 export const updatePreProject = (req, res) => {
     const { id } = req.params;
   const { title,descipcion, items, infoProject } = req.body;
-
+  console.log(res.body);
   preProjectModel
     .updateOne(
       { _id: id },
